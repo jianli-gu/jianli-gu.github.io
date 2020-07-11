@@ -7,6 +7,4 @@ permalink: /about
 last_modified_date: 2020-07-08T17:54:08+0000
 ---
 
-# About Me
-
-Hi~
+Hi~, I'm `Jianli Gu`, a Data Engineer with extensive background.

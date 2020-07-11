@@ -7,4 +7,6 @@ permalink: /
 last_modified_date: 2020-07-08T17:54:08+0000
 ---
 
-# Better Docs Better Coding
+# Agile Coding Docs
+
+Welcome to my `Agile Coding Docs`!
