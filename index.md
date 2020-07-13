@@ -7,6 +7,6 @@ permalink: /
 last_modified_date: 2020-07-08T17:54:08+0000
 ---
 
-# Agile Coding Docs
+Welcome to my **JCoding Docs**!
 
-Welcome to my `Agile Coding Docs`!
+Focusing on data, cloud and software engineering problems.
