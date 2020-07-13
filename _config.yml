@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: JCoding Docs
+title: JCoding Notes
 description: Personal Website
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jianli-gu.github.io" # the base hostname & protocol for your site, e.g. http://example.com
@@ -56,7 +56,7 @@ heading_anchors: true
 
 # Aux links for the upper right navigation
 # aux_links:
-  # "Jianli's Docs on GitHub":
+  # "Jianli's Notes on GitHub":
   #   - "//github.com/jianli-gu/jianli-gu.github.io"
 
 # Makes Aux links open in a new tab. Default is false
@@ -73,7 +73,7 @@ nav_sort: case_insensitive # default, equivalent to nil
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "&copy; 2020 JCoding Docs"
+footer_content: "&copy; 2020 JCoding Notes"
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
