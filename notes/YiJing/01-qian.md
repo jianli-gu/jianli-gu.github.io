@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 乾
-parent: I Ching
-permalink: notes/iching/qian
+parent: Yi Jing
+permalink: notes/yijing/qian
 last_modified_date: 2020-07-13T21:77:01+0000
 ---
 
