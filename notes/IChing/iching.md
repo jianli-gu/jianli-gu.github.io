@@ -6,7 +6,13 @@ has_children: true
 permalink: notes/iching
 ---
 
-Classic of Changes
+易经
+{: .text-center }
+
+I Ching
+{: .text-center }
+
+The Classic of Changes
 {: .text-center }
 
 ![classic of changes](/notes/IChing/images/classic-of-changes.jpg)
