@@ -3,7 +3,7 @@ layout: default
 title: Batch
 parent: AWS
 permalink: notes/aws/batch
-last_modified_date: 2020-07-13T21:77:01+0000
+last_modified_date: 2020-07-13T21:17:01+0000
 ---
 
 # Batch
