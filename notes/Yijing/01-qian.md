@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 乾
-parent: Yi Jing
+parent: Yijing
 nav_order: z01
 permalink: notes/yijing/qian
 last_modified_date: 2020-07-14T21:53:01+0000
