@@ -1,0 +1,1 @@
+Personal coding notes. It's happy thing, if it helps anyone in case.

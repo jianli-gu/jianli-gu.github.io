@@ -1,0 +1,6 @@
+# careers section data
+# if you don't have language feature(language.yml is empty), ignore "i18n" items
+- name: Inc
+  link: 
+  date: 2000 - 2020
+  job: Title
