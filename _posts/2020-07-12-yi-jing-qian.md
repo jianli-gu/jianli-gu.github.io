@@ -2,7 +2,6 @@
 layout: post
 title: 01. 乾
 categories: [Yijing]
-tags: [Yijing]
 modified: 2020-07-14
 ---
 
