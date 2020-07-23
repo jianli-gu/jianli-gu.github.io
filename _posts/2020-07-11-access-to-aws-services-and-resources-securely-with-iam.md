@@ -2,7 +2,7 @@
 layout: post
 title: Access to AWS Services and Resources Securely with IAM
 categories: [AWS]
-tags: [AWS, IAM, Python, Boto3]
+tags: [AWS, IAM, Boto3]
 modified: 2020-07-11
 ---
 
