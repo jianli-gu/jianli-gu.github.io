@@ -9,6 +9,10 @@ ul.tag-cloud {
     margin-right: .5em;
     a.post-tag {
       border-radius: 0.2em;
+      cursor: default;
+    }
+    a:hover {
+      color: #F5A623;
       cursor: pointer;
     }
   }
@@ -30,7 +34,7 @@ ul.tag-cloud {
         color: $text-color;
         &:hover,
         &:focus {
-          color: lighten($text-color, 24%);
+          color: #42b983;
         }
       }
     }
