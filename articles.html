@@ -3,7 +3,7 @@ layout: page
 title:  Articles
 permalink: /articles/
 ---
-<h5><i class="fa fa-tags"></i></h5>
+<h5 style="cursor: default;"><i class="fa fa-tags"></i> tags</h5>
 <ul class="tag-cloud">
 {% for tag in site.tags %}
   <li style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 70  }}%">
@@ -14,7 +14,7 @@ permalink: /articles/
 {% endfor %}
 </ul>
 
-<h4>Categories</h4>
+<h4 style="cursor: default;">Categories</h4>
 <div class="tag-list">
 {% for cat in site.categories %}
   {% capture cat_name%}{{ cat | first}}{% endcapture %}

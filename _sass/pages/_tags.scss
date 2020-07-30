@@ -24,7 +24,7 @@ ul.tag-cloud {
     .tag-group-title {
       color: $warning;
       text-transform: capitalize;
-      cursor: default;
+      cursor: pointer;
     }
 
     .tag-item {
