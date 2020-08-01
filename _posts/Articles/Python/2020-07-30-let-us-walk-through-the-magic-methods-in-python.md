@@ -24,9 +24,9 @@ In the following sections, we are going to walk through the magic methods in dif
 
 `__class__`
 
-`__init__subclass__`
+`__init_subclass__`
 
-`__mro__entries__`
+`__mro_entries__`
 
 `__prepare__`
 
@@ -114,17 +114,17 @@ In the following sections, we are going to walk through the magic methods in dif
 
 ### 8. Rich-comparison Operators
 
-`__lt__` <
+`__lt__`: `<`
 
-`__le__` <=
+`__le__`: `<=`
 
-`__eq__` ==
+`__eq__`: `==`
 
-`__ne__` !=
+`__ne__`: `!=`
 
-`__gt__` >
+`__gt__`: `>`
 
-`__ge__` >=
+`__ge__`: `>=`
 
 
 ### 9. Coroutines
@@ -142,9 +142,9 @@ In the following sections, we are going to walk through the magic methods in dif
 
 ### 10. Unary Arthmetic Operations
 
-`__pos__` +
+`__pos__`: `+`
 
-`__neg__` -
+`__neg__`: `-`
 
 `__abs__` `abs()`
 
@@ -180,21 +180,21 @@ In the following sections, we are going to walk through the magic methods in dif
 
 ### 12. Binary Arithmetic Operations
 
-`__add__` +
+`__add__`: `+`
 
-`__sub__` -
+`__sub__`: `-`
 
-`__mul__` * 
+`__mul__`: `*` 
 
 `__matmul__`: 
 
-`__truediv__` /
+`__truediv__`: `/`
 
-`__floordiv__` //
+`__floordiv__`: `//`
 
-`__mod__` %
+`__mod__`: `%`
 
-`__divmod__` `divmod()`
+`__divmod__`: `divmod()`
 
 `__pow__` `**` or `pow()`
 
@@ -244,19 +244,19 @@ In the following sections, we are going to walk through the magic methods in dif
 ### 14. Augumented Arithmetic Assignments
 
 
-`__iadd__` +=
+`__iadd__`: `+=`
 
-`__isub__` -=
+`__isub__`: `-=`
 
-`__imul__` *=
+`__imul__`: `*=`
 
-`__imatmul__`: @=
+`__imatmul__`: `@=`
 
-`__itruediv__` /=
+`__itruediv__`: `/=`
 
-`__ifloordiv__` //=
+`__ifloordiv__`: `//=`
 
-`__mod__` %=
+`__mod__`: `%=`
 
 `__ipow__` `**=` 
 
