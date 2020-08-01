@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Compare Data Types in Numpy to Python
-categories: [PyData]
+categories: [Numpy]
 tags: [Numpy, Python]
 modified: 2019-12-14
 ---
