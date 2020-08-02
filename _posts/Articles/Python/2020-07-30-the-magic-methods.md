@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Let's Walk Through the Magic Methods in Python
+title: The Magic Methods
 categories: [Python]
 tags: [Python]
-modified: 2019-12-14
+modified: 2020-07-30
 ---
 
 Python class can implement certain operations that are invoked by special syntax, that is, 
