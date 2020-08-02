@@ -180,6 +180,68 @@ the runtime would cleverly use `__lt__` to finish the comparison.
 
 ## 3. Ellipsis
 
+`Ellipsis` is an instance of `ellipsis` class.
+```python
+>>> ...
+Ellipsis
+>>> Ellipsis
+Ellipsis
+>>> type(...)
+<class 'ellipsis'>
+>>> type(Ellipsis)
+<class 'ellipsis'>
+```
+
+The truth value of `Ellipsis` is `True`,
+```python
+>>> bool(...)
+True
+```
+
+It's singleton, as shown below:
+```python
+>>> new_ellipsis = type(...)()
+>>> new_ellipsis == ...
+True
+>>> new_ellipsis is ...
+True
+>>> id(...)
+9373728
+>>> id(new_ellipsis)
+9373728
+```
+
+What `Ellepsis` could be used for? It can be used for slicing multidimensional arrays. For example,
+```python
+>>> import numpy as np
+>>> x = np.arange(16).reshape(2, 2, 4)
+>>> x
+array([[[ 0,  1,  2,  3],
+        [ 4,  5,  6,  7]],
+
+       [[ 8,  9, 10, 11],
+        [12, 13, 14, 15]]])
+
+>>> x[...]
+array([[[ 0,  1,  2,  3],
+        [ 4,  5,  6,  7]],
+
+       [[ 8,  9, 10, 11],
+        [12, 13, 14, 15]]])
+
+>>> x[..., 1]
+array([[ 1,  5],
+       [ 9, 13]])
+
+>>> x[1, ...]
+array([[ 8,  9, 10, 11],
+       [12, 13, 14, 15]])
+
+>>> x[1, ..., 1]
+array([ 9, 13])
+```
+The ellipsis syntax indicates slicing in full any remaining unspecified dimensions.
+
 ## 4. Numbers
 
 ## 5. Sequences
