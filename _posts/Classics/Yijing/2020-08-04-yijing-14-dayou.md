@@ -2,7 +2,7 @@
 layout: post
 title: 14. 大有
 categories: [Yijing]
-permalink: /classics/:year-:month/:title
+permalink: /classics/:title
 modified: 2020-08-04
 ---
 

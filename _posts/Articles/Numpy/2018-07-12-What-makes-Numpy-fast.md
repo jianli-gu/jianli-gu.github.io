@@ -15,7 +15,7 @@ like SciPy, OpenCV, scikit-learn, etc.
 
 Short answer: Yes, because of *vectorization* and *broadcasting*.
 
-NumPy is written in Python and C. At the core of NumPy, is the ndarray object which 
+NumPy is written in Python and C. At the core of NumPy, is the `ndarray` object which 
 encapsulates n-dimentional arrays of homogeneous data types, and has operations in pre-compiled 
 C code for performance. Behind the scenes in optimization, vectorizattion describes the absence 
 of any explicit operations, like looping, indexing, etc. 
