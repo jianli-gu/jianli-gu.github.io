@@ -2,7 +2,7 @@
 layout: post
 title: Mount AWS S3 Bucket as Local Filesystem Using s3fs-fuse
 categories: [Linux]
-tags: [AWS, S3]
+tags: [Linux, AWS, S3]
 modified: 2019-12-11
 ---
 
