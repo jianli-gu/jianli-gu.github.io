@@ -15,8 +15,9 @@ the `ALLOWED_HOSTS` settings blocks internal requests from AWS ELB, because ELB 
 the internal ip address instead of a domain name. We can simply set `ALLOWED_HOST=['*']`, but it's 
 not a good solution from the perspective of security.
 
-Here's an alternative solution, it can read the `ec2metadata` to the internal IP, and add it into
-the `ALLOWED_HOSTS` list dynamically. To add the following code into the `settings.py` file,
+Here's an alternative solution, it can read the `ec2metadata` of EC2 instance to get the internal IP, 
+and add it into Django's `ALLOWED_HOSTS` list dynamically. 
+To add the following code into the `settings.py` file,
 
 
 ```python
@@ -37,7 +38,7 @@ if EC2_PRIVATE_IP:
     ALLOWED_HOSTS.append(EC2_PRIVATE_IP)
 ```
 
-Hope it can help!
+Hope it can help, good luck!
 
 ---
 **References**
