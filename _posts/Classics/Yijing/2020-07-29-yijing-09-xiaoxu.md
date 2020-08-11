@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 09. 小畜
-categories: [Yijing]
+categories: [易经]
 permalink: /classics/:title
 modified: 2020-07-29
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 13. 同人
-categories: [Yijing]
+categories: [易经]
 permalink: /classics/:title
 modified: 2020-08-03
 ---
