@@ -6,6 +6,7 @@ permalink: /links
 
 Learn lessons and insights from other people and companies.
 
+---
 
 ***Anomaly Detection***
 
