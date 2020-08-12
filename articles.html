@@ -3,18 +3,15 @@ layout: page
 title:  Articles
 permalink: /articles
 ---
-<h5 style="cursor: default;"><i class="fa fa-tags"></i> tags</h5>
-<ul class="tag-cloud">
-{% for tag in site.tags %}
-  <li style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 70  }}%">
-    <a class="post-tag">
-      {{ tag | first }}
-    </a>
-  </li>
+<h5 style="cursor: default;"><i class="fa fa-location-arrow"></i> categories</h5>
+<ul class="cat-cloud">
+{% for cat in site.categories %}
+  {% capture cat_name%}{{ cat | first}}{% endcapture %}
+  {% if site.classics contains cat_name %}{% continue %}{% endif %}
+  <li><a class="post-tag" href="#{{ cat | first | slugize }}">{{ cat | first }}</a></li>
 {% endfor %}
 </ul>
 
-<h4 style="cursor: default;">Categories</h4>
 <div class="tag-list">
 {% for cat in site.categories %}
   {% capture cat_name%}{{ cat | first}}{% endcapture %}
@@ -30,3 +27,16 @@ permalink: /articles
   </div>
 {% endfor %}
 </div>
+
+<p style="color: rgb(164, 165, 167);">-----</p>
+
+<h5 style="cursor: default;"><i class="fa fa-tags"></i> tags</h5>
+<ul class="tag-cloud">
+{% for tag in site.tags %}
+  <li style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 70  }}%">
+    <a class="post-tag">
+      {{ tag | first }}
+    </a>
+  </li>
+{% endfor %}
+</ul>

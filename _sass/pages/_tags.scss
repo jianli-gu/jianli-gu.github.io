@@ -11,10 +11,6 @@ ul.tag-cloud {
       border-radius: 0.2em;
       cursor: default;
     }
-    a:hover {
-      color: #F5A623;
-      cursor: default;
-    }
   }
 }
 
@@ -59,6 +55,28 @@ ul.tag-cloud {
           color: lighten($danger, 24%);
         }
       }
+    }
+  }
+}
+
+ul.cat-cloud {
+  padding: 2em 0 3em;
+  margin: 0;
+  overflow: hidden;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin-right: .5em;
+    font-size: 14px;
+    a.post-tag {
+      color: #8d7edc;
+      border-radius: 0.2em;
+      cursor: default;
+    }
+    a:hover {
+      color: #F5A623;
+      cursor: pointer;
     }
   }
 }

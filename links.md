@@ -15,3 +15,5 @@ Learn lessons and insights from other people and companies.
 ***Software Engineering***
 
 * [https://github.com/kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
+* [https://advancedweb.hu/archive.html](https://advancedweb.hu/archive.html)
+* [https://medium.com/airbnb-engineering](https://medium.com/airbnb-engineering)
