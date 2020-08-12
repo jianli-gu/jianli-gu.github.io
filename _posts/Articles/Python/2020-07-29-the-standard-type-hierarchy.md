@@ -244,6 +244,36 @@ The ellipsis syntax indicates slicing in full any remaining unspecified dimensio
 
 ## 4. Numbers
 
+Numbers in Python consit of integral numbers, floating point numbers, and complex numbers.
+
+```python
+>>> from numbers import Number
+>>> x = 10000000000000000000000000000000000000000000
+>>> isinstance(x, Number)
+True
+>>> y = '1000'
+>>> isinstance(y, Number)
+False
+```
+
+`numbers.Number` is the root of the numeric hierarchy.
+
+
+**4.1 `numbers.Integral`**
+
+* `int` - Unlimited range, subject to available memory only.
+* `bool` - Boolean objects `True` and `False`, a subtype of the integer type, behave like `1` and `0`.
+
+**4.2 `numbers.Real`**
+
+* `float` - Machine-level double precision floating point numbers.
+
+**4.3 `numbers.Complex`**
+
+* `complex` - A pair of machine-level double precision floating point numbers, containing real `z.real` and imaginary `z.imag` parts.
+
+For more details, please refer to the [numbers](https://python.readthedocs.io/en/stable/library/numbers.html) module.
+
 ## 5. Sequences
 
 ## 6. Set Types
