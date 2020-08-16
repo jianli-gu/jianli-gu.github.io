@@ -417,7 +417,73 @@ Out[9]: <User: tester>
 
 ## 7. Modules
 
-## 8. Internal Types
+Python modules are created by the [import system](https://docs.python.org/3/reference/import.html), 
+and invoked by three ways:
+* `import` statement
+* `importlib.import_module()` function
+* `__import__` built-in
+
+The module object contains the following attributes,
+* `__name__`
+* `__loader__`
+* `__package__`
+* `__spec__`
+* `__path__`
+* `__file__`
+* `__cached__`
+
+```python
+>>> import scipy.io as sio
+>>> sio.__name__
+'scipy.io'
+>>> sio.__loader__
+<_frozen_importlib_external.SourceFileLoader object at 0x7f3ee6410d90>
+>>> sio.__package__
+'scipy.io'
+>>> sio.__spec__
+ModuleSpec(
+    name='scipy.io', loader=<_frozen_importlib_external.SourceFileLoader object at 0x7f3ee6410d90>, 
+    origin='~/.virtualenvs/dev/lib/python3.8/site-packages/scipy/io/__init__.py', 
+    submodule_search_locations=['~/.virtualenvs/dev/lib/python3.8/site-packages/scipy/io']
+)
+>>> sio.__path__
+['~/.virtualenvs/dev/lib/python3.8/site-packages/scipy/io']
+>>> sio.__file__
+'~/.virtualenvs/dev/lib/python3.8/site-packages/scipy/io/__init__.py'
+>>> sio.__cached__
+'~/.virtualenvs/dev/lib/python3.8/site-packages/scipy/io/__pycache__/__init__.cpython-38.pyc'
+```
+
+The module object does not contain the code object used to initialize the module, as it isn't needed
+once the initialization is done. To access the module's namespace as a dictionary, use read-only
+attribute:
+
+```python
+`>>> sio.__dict__
+```
+
+## 8. Custom Classes
+
+## 9. Class Instances
+
+## 10. File Objects
+
+## 11. Internal Types
+
+The types below are used by the interpreter internally, their definitions may change with future
+versions of the interpreter.
+
+**11.1 Code objects**
+
+**11.2 Frame objects**
+
+**11.3 Traceback objects**
+
+**11.4 Slice objects**
+
+**11.5 Static method objects**
+
+**11.6 class method objects**
 
 ---
 
