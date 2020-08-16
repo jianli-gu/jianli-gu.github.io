@@ -441,11 +441,7 @@ The module object contains the following attributes,
 >>> sio.__package__
 'scipy.io'
 >>> sio.__spec__
-ModuleSpec(
-    name='scipy.io', loader=<_frozen_importlib_external.SourceFileLoader object at 0x7f3ee6410d90>, 
-    origin='~/.virtualenvs/dev/lib/python3.8/site-packages/scipy/io/__init__.py', 
-    submodule_search_locations=['~/.virtualenvs/dev/lib/python3.8/site-packages/scipy/io']
-)
+ModuleSpec(name='scipy.io', loader=<_frozen_importlib_external.SourceFileLoader object at 0x7f3ee6410d90>, origin='~/.virtualenvs/dev/lib/python3.8/site-packages/scipy/io/__init__.py', submodule_search_locations=['~/.virtualenvs/dev/lib/python3.8/site-packages/scipy/io'])
 >>> sio.__path__
 ['~/.virtualenvs/dev/lib/python3.8/site-packages/scipy/io']
 >>> sio.__file__
