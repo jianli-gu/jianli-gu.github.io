@@ -3,7 +3,7 @@ layout: post
 title: The Standard Type Hierarchy
 categories: [Python]
 tags: [Python]
-modified: 2020-07-29
+modified: 2020-08-15
 ---
 
 In Python, everything is an object. In this article, we are going to explore the standard types of 
@@ -272,19 +272,152 @@ False
 
 * `complex` - A pair of machine-level double precision floating point numbers, containing real `z.real` and imaginary `z.imag` parts.
 
-For more details, please refer to the [numbers](https://python.readthedocs.io/en/stable/library/numbers.html) module.
+For more details, please refer to the [numbers](https://python.readthedocs.io/en/stable/library/numbers.html) module, 
+and the [PEP 3141](https://www.python.org/dev/peps/pep-3141/).
 
-## 5. Sequences
+## 5. Collections
 
-## 6. Set Types
+**5.1 Sequences**
 
-## 7. Mappings
+Immutable sequences
+* Strings
+* Tuples
+* Bytes
 
-## 8. Callable Types
+Mutable sequences
+* Lists
+* Byte Arrays
 
-## 9. Modules
+**5.2 Set**
 
-## 10. Internal Types
+There are currently two intrinsic set types:
+* Sets
+* Frozen sets
+
+The relationship between frozenset and set is like what between tuple and list. 
+They are using the same hashtable implementation behind, and sets provide fast data insertion,
+deletion and membership testing. Frozenset is immutable and hashable, so can be used as ditionary 
+keys.
+
+**5.3 Mappings**
+
+* Dictionaries
+
+## 6. Callables
+
+**6.1 User-defined functions**
+
+Let's define a function, like this:
+
+```python
+def run(a: int, b: float, c: float = 1.0) -> float:
+    """Process numbers"""
+    return a + b + c
+```
+
+We can get access many special attributes about this function, for example,
+* `__doc__`
+* `__name__`
+* `__qualname__`
+* `__module__`
+* `__defaults__`
+* `__code__`
+* `__gloabals__`
+* `__dict__`
+* `__closure__`
+* `__annotations__`
+* `__kwdefaults__`
+
+```python
+>>> run.__doc__
+'Process numbers'
+>>> run.__name__
+'run'
+>>> run.__qualname__
+'run'
+>>> run.__module__
+'__main__'
+>>> run.__defaults__
+(1.0,)
+>>> run.__code__
+<code object run at 0x7f5fae0085b0, file "<stdin>", line 1>
+>>> run.__globals__
+{'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'run': <function run at 0x7f5fadee2d30>}'
+>>> run.__dict__
+{}
+>>> run.__closure__
+>>> run.__annotations__
+{'a': <class 'int'>, 'b': <class 'float'>, 'c': <class 'float'>, 'return': <class 'float'>}'
+>>> run.__kwdefaults__
+```
+
+**6.2 Instance methods**
+
+Here's an `User` class,
+
+```python
+class User:
+    """Customized user class"""
+
+    def __init__(self, name: str, password: str, active: bool=True):
+        """Initialize user class"""
+        self.name = name
+        self.password = password
+    
+    def __repr__(self):
+        """User string representation"""
+        return f"<User: {self.name}>"
+
+    def change_password(self, new_password):
+        """User changes password"""
+        self.password = new_password
+```
+
+We can also access the special attributes attached to instance methods,
+
+```python
+In [2]: user = User(name="tester", password="123456")                                          
+
+In [3]: user.change_password.__doc__           
+Out[3]: 'User changes password'
+
+In [4]: user.change_password.__module__        
+Out[4]: '__main__'
+
+In [5]: user.change_password.__func__          
+Out[5]: <function __main__.User.change_password(self, new_password)>
+
+In [6]: user.change_password.__func__.__name__ 
+Out[6]: 'change_password'
+
+In [7]: user.change_password.__func__.__module__                                               
+Out[7]: '__main__'
+
+In [8]: user.change_password.__func__.__doc__  
+Out[8]: 'User changes password'
+
+In [9]: user.change_password.__self__          
+Out[9]: <User: tester>
+
+```
+
+**6.3 Generator functions**
+
+**6.4 Coroutine functions**
+
+**6.5 Asynchronous generator functions**
+
+**6.6 Built-in functions**
+
+**6.7 Built-in methods**
+
+**6.8 Classes**
+
+**6.9 Class Instances**
+
+## 7. Modules
+
+## 8. Internal Types
 
 ---
 
