@@ -455,7 +455,7 @@ once the initialization is done. To access the module's namespace as a dictionar
 attribute:
 
 ```python
-`>>> sio.__dict__
+>>> sio.__dict__
 ```
 
 ## 8. Custom Classes
