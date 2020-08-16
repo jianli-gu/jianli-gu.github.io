@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Standard Type Hierarchy in Python Data Models
+title: Standard Type Hierarchy in Python Data Models
 categories: [Python]
 tags: [Python]
 modified: 2020-08-15

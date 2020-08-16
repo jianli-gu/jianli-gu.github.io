@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Magic Methods in Python Data Models
+title: Magic Methods in Python Data Models
 categories: [Python]
 tags: [Python]
 modified: 2020-07-30
