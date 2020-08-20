@@ -15,7 +15,7 @@ Python, and its hierarchy.
 
 ## 1. None
 
-**1.1 Keywords**
+### 1.1 Keywords
 
 `None` is a keywords in Python, and can not be used as ordinary identifier. 
 
@@ -26,7 +26,7 @@ SyntaxError: cannot assign to None
 ```
 Follow link [here](https://docs.python.org/3/reference/lexical_analysis.html#keywords) for all keywords.
 
-**1.2 Constant**
+### 1.2 Constant
 
 `None` is built into Python, can check the `__builtins__` module using `dir` method.
 
@@ -39,7 +39,7 @@ None
 ```
 Follow link [here](https://docs.python.org/3/library/constants.html) for a small number of constants.
 
-**1.3 `NoneType`**
+### 1.3 `NoneType`
 
 `None` is an object and a first-class citizen, it's type is `NoneType`. 
 
@@ -77,7 +77,7 @@ Traceback (most recent call last):
 TypeError: type 'NoneType' is not an acceptable base type
 ```
 
-**1.4 False**
+### 1.4 False
 
 `None` is falsy,
 
@@ -259,7 +259,7 @@ False
 `numbers.Number` is the root of the numeric hierarchy.
 
 
-**4.1 `numbers.Integral`**
+### 4.1 `numbers.Integral`
 
 * `int` - Unlimited range, subject to available memory only.
 * `bool` - Boolean objects `True` and `False`, a subtype of the integer type, behave like `1` and `0`.
@@ -268,7 +268,7 @@ False
 
 * `float` - Machine-level double precision floating point numbers.
 
-**4.3 `numbers.Complex`**
+### 4.3 `numbers.Complex`
 
 * `complex` - A pair of machine-level double precision floating point numbers, containing real `z.real` and imaginary `z.imag` parts.
 
@@ -277,7 +277,7 @@ and the [PEP 3141](https://www.python.org/dev/peps/pep-3141/).
 
 ## 5. Collections
 
-**5.1 Sequences**
+### 5.1 Sequences
 
 Immutable sequences
 * Strings
@@ -288,7 +288,7 @@ Mutable sequences
 * Lists
 * Byte Arrays
 
-**5.2 Set**
+### 5.2 Set
 
 There are currently two intrinsic set types:
 * Sets
@@ -299,13 +299,13 @@ They are using the same hashtable implementation behind, and sets provide fast d
 deletion and membership testing. Frozenset is immutable and hashable, so can be used as ditionary 
 keys.
 
-**5.3 Mappings**
+### 5.3 Mappings
 
 * Dictionaries
 
 ## 6. Callables
 
-**6.1 User-defined functions**
+### 6.1 User-defined functions
 
 Let's define a function, like this:
 
@@ -351,7 +351,7 @@ We can get access many special attributes about this function, for example,
 >>> run.__kwdefaults__
 ```
 
-**6.2 Instance methods**
+### 6.2 Instance methods
 
 Here's an `User` class,
 
@@ -401,7 +401,69 @@ Out[9]: <User: tester>
 
 ```
 
-**6.3 Generator functions**
+### 6.3 Generator functions
+
+Generator is kind of special iterator and can only iterate over once. It does not store all the 
+values in memory, but generate the values on the fly.
+
+**a. Generator function**
+
+Define generator function by using `yield` statement,
+
+```python
+>>> def generate_numbers(n):
+...     i = 0
+...     while i < n:
+...         yield i
+...         i += 1
+... 
+>>> numbers = generate_numbers(5)
+>>> numbers
+<generator object generate_numbers at 0x7fe9df5bdac0>
+>>> numbers.__next__()
+0
+>>> next(numbers)
+1
+>>> for i in numbers:
+...     print(i)
+... 
+2
+3
+4
+>>> next(numbers)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+```
+
+**b. Generator expression**
+
+Or, define generator expression by using `()`,
+
+```python
+>>> g = (x*2 for x in range(5))
+>>> g
+<generator object <genexpr> at 0x7fe9df573b30>
+>>> g.__next__()
+0
+>>> g.__next__()
+2
+>>> g.__next__()
+4
+>>> g.__next__()
+6
+>>> g.__next__()
+8
+>>> g.__next__()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+```
+
+You may notice that:
+* A function with `yield` statement, when called, returns a generator.
+* It raises `StopIteration` exception when hits the end. 
+
 
 **6.4 Coroutine functions**
 
@@ -469,17 +531,17 @@ attribute:
 The types below are used by the interpreter internally, their definitions may change with future
 versions of the interpreter.
 
-**11.1 Code objects**
+### 11.1 Code objects
 
-**11.2 Frame objects**
+### 11.2 Frame objects
 
-**11.3 Traceback objects**
+### 11.3 Traceback objects
 
-**11.4 Slice objects**
+### 11.4 Slice objects
 
-**11.5 Static method objects**
+### 11.5 Static method objects
 
-**11.6 class method objects**
+### 11.6 class method objects
 
 ---
 
