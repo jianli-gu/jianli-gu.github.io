@@ -406,7 +406,7 @@ Out[9]: <User: tester>
 Generator is kind of special iterator and can only iterate over once. It does not store all the 
 values in memory, but generate the values on the fly.
 
-**a. Generator function**
+**(1) Generator function**
 
 Define generator function by using `yield` statement,
 
@@ -436,7 +436,7 @@ Traceback (most recent call last):
 StopIteration
 ```
 
-**b. Generator expression**
+**(2) Generator expression**
 
 Or, define generator expression by using `()`,
 
@@ -465,9 +465,18 @@ You may notice that:
 * It raises `StopIteration` exception when hits the end. 
 
 
-**6.4 Coroutine functions**
+### 6.4 Coroutine functions
 
-**6.5 Asynchronous generator functions**
+*Coroutine* is a more generalized form of subroutine which can be entered, exited, and resumed at
+many different points.
+
+A *coroutine function* is defined using `async def` which returns a coroutine object, coroutine
+objects are awaitable objects. The execution of a coroutine is controlled by calling `__await__` 
+method and iterating over the result. When it finishes and returns, the iterator raises 
+`StopIteration`, the exception's value hold the return value. 
+
+
+### 6.5 Asynchronous generator functions
 
 **6.6 Built-in functions**
 
