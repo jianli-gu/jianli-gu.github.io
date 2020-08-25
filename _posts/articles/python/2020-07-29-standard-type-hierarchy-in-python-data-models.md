@@ -475,6 +475,24 @@ objects are awaitable objects. The execution of a coroutine is controlled by cal
 method and iterating over the result. When it finishes and returns, the iterator raises 
 `StopIteration`, the exception's value hold the return value. 
 
+```python
+>>> import asyncio
+
+>>> async def task():
+        print("Hello")
+        await asyncio.sleep(2)
+        print("World")
+
+>>>> asyncio.run(task())
+Hello
+World
+```
+
+Asyncio provides three main mechanisms to run a coroutine,
+* `asyncio.run()`
+* Awaiting on a coroutine.
+* `asyncio.create_task()`
+
 
 ### 6.5 Asynchronous generator functions
 
