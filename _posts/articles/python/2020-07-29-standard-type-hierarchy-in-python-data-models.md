@@ -496,13 +496,48 @@ Asyncio provides three main mechanisms to run a coroutine,
 
 ### 6.5 Asynchronous generator functions
 
-**6.6 Built-in functions**
+### 6.6 Built-in functions
 
-**6.7 Built-in methods**
+A built-in function object is a wrapper around a C function, it has special read-only attributes.
 
-**6.8 Classes**
+```python
+>>> len
+<built-in function len>
+>>> len.__doc__
+'Return the number of items in a container.'
+>>> len.__module__
+'builtins'
+>>> len.__self__
+<module 'builtins' (built-in)>
+```
 
-**6.9 Class Instances**
+### 6.7 Classes
+
+Classes are callable. For example
+
+```python
+>>> from datetime import datetime
+>>> datetime
+<class 'datetime.datetime'>'
+>>> datetime(2020, 8, 20, 1, 2, 12)
+datetime.datetime(2020, 8, 20, 1, 2, 12)
+```
+
+### 6.8 Class Instances
+
+Instance of arbitrary classes can be made callable by defining a `__call__()` method in class.
+For instance,
+
+```python
+>>> class AddNumber:
+...     def __call__(self, x, y):
+...         return x + y
+... 
+>>> add_number = AddNumber()
+>>> add_number(1, 5)
+6
+```
+
 
 ## 7. Modules
 
