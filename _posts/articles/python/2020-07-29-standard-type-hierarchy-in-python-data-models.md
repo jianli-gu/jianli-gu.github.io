@@ -494,7 +494,9 @@ Asyncio provides three main mechanisms to run a coroutine,
 * `asyncio.create_task()`
 
 
-### 6.5 Asynchronous generator functions
+### 6.5 Asynchronous generators
+
+
 
 ### 6.6 Built-in functions
 
@@ -584,26 +586,66 @@ attribute:
 
 ## 8. Custom Classes
 
+Custom class types are typically created by class definitions, which have namespace implemented
+by a dict object.
+
+```python
+>>> class User:
+...     """The User Class"""
+...     def __init__(self, username, password):
+...         self.username = username
+...         self.password = password
+...     def do_something(self):
+...         print("Do something...")
+... 
+>>> User.__name__
+'User'
+>>> User.__doc__
+'The User Class'
+>>> User.__bases__
+(<class 'object'>,)'
+>>> User.__dict__
+mappingproxy({'__module__': '__main__', '__doc__': 'The User Class', '__init__': <function User.__init__ at 0x7fadc3858dc0>, 'do_something': <function User.do_something at 0x7fadc3858e50>, '__dict__': <attribute '__dict__' of 'User' objects>, '__weakref__': <attribute '__weakref__' of 'User' objects>})
+```
+
 ## 9. Class Instances
+
+A class instance has a namespace implemented as a dict which is the first place in which attibute
+references are searched.
+
+```python
+>>> user = User("Tester", "123456")
+>>> user.__dict__
+{'username': 'Tester', 'password': '123456'}
+>>> user.__class__
+<class '__main__.User'>
+```
 
 ## 10. File Objects
 
+A file object represents an open file. There are three categories of file objects:
+* raw binary files
+* buffered binary files
+* text files
+  
+Many methods are available to create the file objects, for example,
+* `open()`
+* `os.open()`
+* `os.fopen()`
+* `socket.makefile()`
+
 ## 11. Internal Types
 
-The types below are used by the interpreter internally, their definitions may change with future
-versions of the interpreter.
+The types below are used by the interpreter internally, 
 
-### 11.1 Code objects
+* Code objects
+* Frame objects
+* Traceback objects
+* Slice objects
+* Static method objects
+* Class method objects
 
-### 11.2 Frame objects
-
-### 11.3 Traceback objects
-
-### 11.4 Slice objects
-
-### 11.5 Static method objects
-
-### 11.6 class method objects
+Please note that their definitions may change with future versions of the interpreter.
 
 ---
 
