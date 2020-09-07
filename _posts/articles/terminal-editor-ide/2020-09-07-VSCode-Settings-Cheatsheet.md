@@ -1,7 +1,7 @@
 ---
 layout: post
 title: VSCode Settings Cheatsheet
-categories: [Terminal Editor & IDE]
+categories: [Terminal & Editor & IDE]
 tags: [VSCode]
 modified: 2020-09-07
 ---

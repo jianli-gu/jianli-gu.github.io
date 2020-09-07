@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tmux Cheatsheet and Quick Reference
-categories: [Terminal Editor & IDE]
+categories: [Terminal & Editor & IDE]
 tags: [Tmux]
 modified: 2019-12-16
 ---
