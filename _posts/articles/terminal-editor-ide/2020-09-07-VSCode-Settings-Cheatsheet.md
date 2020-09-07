@@ -1,0 +1,21 @@
+---
+layout: post
+title: VSCode Settings Cheatsheet
+categories: [Terminal Editor & IDE]
+tags: [VSCode]
+modified: 2020-09-07
+---
+
+#### Table of Content
+* TOC
+{:toc}
+
+
+## Editor
+
+```json
+{
+    "editor.rulers": [80, 100],
+    "editor.fontLigatures": false
+}
+```
