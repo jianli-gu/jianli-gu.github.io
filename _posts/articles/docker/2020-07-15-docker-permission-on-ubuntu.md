@@ -6,7 +6,13 @@ tags: [Docker, Ubuntu]
 modified: 2020-07-15
 ---
 
-After docker installation on Ubuntu, you may get an error raised as me below,
+After docker installation on Ubuntu,
+```bash
+$ sudo snap install docker
+```
+
+
+you may get an error raised as me below,
 
 ```bash
 $ docker info
@@ -33,6 +39,7 @@ $ sudo docker info
 The recommended ways is to add the current user to `docker` group.
 
 ``` bash
+$ sudo groupadd docker
 $ sudo usermod -a -G docker $USER
 ```
 
