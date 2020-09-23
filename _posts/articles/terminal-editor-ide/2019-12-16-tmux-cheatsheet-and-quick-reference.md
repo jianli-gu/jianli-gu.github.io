@@ -195,10 +195,12 @@ Tmux has three levels of hierarchy: Session, window, and pane.
 
 ## Settings
 
-`Ctrol + b :`
+* Enable mouse to scroll on pane
+
+    `Ctrol + b :`
     ```bash
-    $ set -g mouse on
-    $ setw -g mouse on
+    $ set -g mouse on  # session wide
+    $ setw -g mouse on # window wide
     ```
 
 Happy tmuxing!
