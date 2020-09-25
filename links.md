@@ -8,6 +8,6 @@ A collection of awesome blogs, posts, articles, talks, repos, and more...
 
 ---
 
-## Blogs
+#### Blogs
 
 [https://start.jcolemorrison.com/](https://start.jcolemorrison.com/) [AWS]
