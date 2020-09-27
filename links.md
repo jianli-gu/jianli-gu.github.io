@@ -4,7 +4,7 @@ title:  Links
 permalink: /links
 ---
 
-A collection of awesome blogs, articles, books, talks, repos, videos and more...
+A collection of awesome blogs, articles, books, talks, repos, videos, sites, and more...
 
 ---
 
