@@ -4,11 +4,12 @@ title:  Links
 permalink: /links
 ---
 
-A collection of awesome blogs, posts, books, articles, talks, repos, videos and more...
+A collection of awesome blogs, articles, books, talks, repos, videos and more...
 
 ---
 
 #### Blogs
+- [https://aws.amazon.com/blogs/aws/](https://aws.amazon.com/blogs/aws/) [AWS]
 - [https://start.jcolemorrison.com/](https://start.jcolemorrison.com/) [AWS]
 - [https://www.distributedpython.com/](https://www.distributedpython.com/) [Celery]
 - [https://angelddaz.substack.com/](https://angelddaz.substack.com/) [Modern Data Insfrastructure]
