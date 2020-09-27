@@ -22,7 +22,7 @@ A collection of awesome posts, articles, books, talks, repos, videos, sites, and
 - [https://blog.mapbox.com/](https://blog.mapbox.com/) [Mapbox]
 - [https://databricks.com/blog/category/engineering](https://databricks.com/blog/category/engineering) [Databricks]
 - [https://netflixtechblog.com/](https://netflixtechblog.com/) [Netflix]
-- [https://medium.com/@Pinterest_Engineering](https://medium.com/@Pinterest_Engineering) [Pinterest]
+- [https://medium.com/pinterest-engineering](https://medium.com/pinterest-engineering) [Pinterest]
 
 
 #### Books
