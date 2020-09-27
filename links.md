@@ -4,7 +4,7 @@ title:  Links
 permalink: /links
 ---
 
-A collection of awesome blogs, posts, articles, talks, repos, and more...
+A collection of awesome blogs, posts, books, articles, talks, repos, videos and more...
 
 ---
 
@@ -21,6 +21,6 @@ A collection of awesome blogs, posts, articles, talks, repos, and more...
   https://www.labri.fr/perso/nrougier/from-python-to-numpy) [*Numpy*]
 
 
-#### Vedios
+#### Videos
 - [https://www.youtube.com/playlist?list=PLhNSoGM2ik6SIkVGXWBwerucXjgP1rHmB](
   https://www.youtube.com/playlist?list=PLhNSoGM2ik6SIkVGXWBwerucXjgP1rHmB) [*Asyncio*]
