@@ -30,6 +30,8 @@ A collection of awesome blogs, posts, books, articles, talks, repos, videos and 
   https://www.youtube.com/playlist?list=PLhNSoGM2ik6SIkVGXWBwerucXjgP1rHmB) [Asyncio]
 - [https://www.youtube.com/playlist?list=PLWsYJ2ygHmWjPsg-6MnQO6WxVWFl8OzK_](
   https://www.youtube.com/playlist?list=PLWsYJ2ygHmWjPsg-6MnQO6WxVWFl8OzK_) [Hadoop, AWS EC2]
+- [https://www.youtube.com/playlist?list=PLWzwUIYZpnJuT0sH4BN56P5oWTdHJiTNq](
+  https://www.youtube.com/playlist?list=PLWzwUIYZpnJuT0sH4BN56P5oWTdHJiTNq) [Github Pages, Jekyll]
 
 
 #### Wiki
