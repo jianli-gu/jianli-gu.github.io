@@ -1464,6 +1464,127 @@ Apply rule to incoming request and then forward or redirect traffic.
 * Query string
 
 
+#### Security Groups
+
+A virtual firewall that controls the traffic to and from EC2 instances.
+
+
+##### Take Aways
+
+* sg are associated with EC2 instances.
+* sg are at protocol and port access level.
+* sg are a set of rules filtering inbound/outbound traffic through EC2 instances.
+* All traffic is blocked by default unless a rule specifically allows it.
+* multiple instances across multiple subnets can belong to a sg.
+
+##### Limits
+
+* upto 10,000 in a region, default 2,500
+* 60 inbound rules, 60 outbound rules per sg
+* 16 sg per ENI, default 5
+
+
+#### Network Access Control List (NACL)
+
+A layer of security that acts as a firewall for controlling traffic in/out of subnets.
+
+
+##### Take Aways
+
+* Acts as firewall at the subnet level
+* VPCs automaticall get a default NACL
+* Subnets are associated with NACLs, and can only belong to a single NACL.
+* Each NACL contains rules that deny/allow traffic into/out of subnets.
+* Rule # determines the order of evaluation.
+* Can block a single IP address, can not do with sg.
+
+
+### IAM
+
+Manage access of AWS users and resources.
+
+
+#### Core Compoents
+
+1. users
+2. groups
+3. roles
+4. policies
+
+
+#### Type of Policies
+
+1. Managed Policies, orange box
+2. Customer Managed Policies, no symbol
+3. Inline Policies
+
+
+#### Access Keys
+
+* programmatically vis CLI or SDK
+
+#### MFA
+
+* Turned on per user
+* User needs to turn on
+
+#### Temporary Security Credentials
+
+Like access keys, but temporary, useful for
+* identity federation
+* delegation
+* cross-account access
+* IAM roles
+
+##### Identify Federation
+
+Linking a person's electronic identity and attributes, stored across multiple
+distinct identity management systems.
+
+* Enterprise identity federation
+  * SAML
+  * Custom Federation broker
+* Web identity Federation
+  * Amazon
+  * Facebook
+  * Google
+  * OpenID Connect (OICD) 2.0
+
+
+##### Security Token Service (STS)
+
+A global service enables you to request temporary, limited-privilege credentials
+for Iam users or federated users.
+
+STS Returns:
+* Access Key ID
+* Secret Access Key
+* Session Token
+* Expiration
+
+The following API actions to obtain STS:
+* AssumeRole *
+* AssumeRoleWithSAML
+* AssumeRoleWithWebIdentity *
+* DecodeAuthorizationMessage
+* GetAccessKeyInfo
+* GetCallerIdentity
+* GetFederationToken
+* GetSessionToken
+
+
+#### Policy Structure
+
+* version
+* statement
+* sid (optional)
+* effect
+* principal
+* action
+* resource
+* condition
+
+
 ### CLI & SDK
 
 #### CLI
