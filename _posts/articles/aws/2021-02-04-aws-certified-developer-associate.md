@@ -1585,6 +1585,520 @@ The following API actions to obtain STS:
 * condition
 
 
+### CloudFront
+
+Content Distribution Network (CDN)
+
+Creates cached copies of your website at various Edge locations around the world.
+
+CDN - a distributed network of servers, deliver web page/content based on
+* geographical location
+* origin of the web page
+* content delivery server
+
+
+
+#### Core Components
+
+* origin
+  * S3 bucket
+  * EC2 instance
+  * ELB
+  * Route53
+* edge location
+  * different AWS region or AZ
+
+#### Distributions
+
+Two types of ditributions
+1. Web (for website)
+2. STRM (for streaming media)
+
+* Behaviors
+* Invalidations
+* Error Pages
+* Restrictions
+
+#### Lambda@Edge
+
+Four functions
+1. Viewer request - when cloudfront receives a request from a viewer.
+2. Origin request - before cloudfront forwards a request to the origin.
+3. Origin response - when cloudfront receives a response from the origin.
+4. View response - before cloudfront returns the response to the viewer.
+
+#### Protection
+
+Original Identiry Access (OAI)
+
+* Signed URLs
+* Signed Cookies
+
+In order to use Signed URLs or Signed Cookies, you need to have an OAI.
+
+
+### CloudTrail
+
+Logs API calls between AWS services when you need to know who to blame.
+
+AWS CloudTrail is a service that enable sgoverance, compliance, operational auditing,
+and rist auditing of your AWS account.
+
+Used to monitor API calls and Actions on an AWS account, and can easily identify which users and accounts made the call to AWS eg.
+
+* Where
+* When
+* Who
+* What
+
+#### Event History
+
+* Last 90 days via Event history by default
+
+#### Trail Operations
+
+* log to all regions
+* across all accounts in an organization
+* encrypt your logs
+* log file validation
+
+#### To CloudWatch
+
+CloudTrail can be set to deliver events to a cloudwatch log.
+
+#### Management Events vs Data Events
+
+##### Management Events
+
+* Configuring security
+* Registering devices
+* Configuring rules for routing data
+* Setting up logging
+
+##### Data Events
+
+* Turned off by defaults
+
+
+### CloudFormation
+
+Infrastructure as Code (IaC)
+
+#### Formats
+
+* JSON
+* YAML
+
+#### Template Anatomy
+
+* MetaData
+* Description
+* Parameters
+* Mappings
+* Conditions
+* Transform
+* Resources
+* Outputs
+
+#### Quick Starts
+
+A collection of Pre-built cloudformation templates
+
+
+#### Stack Updates
+
+Two ways to perform update:
+* Direct update
+* Change sets
+
+#### Prevent Stack Updates
+
+To prevent data loss or interruption to service
+
+* StackPolicy
+
+#### Nested Stacks
+
+1. Create modular templates, reuse
+2. assemble large template, reduce comlexity
+
+#### Drift Detection
+
+* What is Drift
+* Why does Drift happen
+* Detect Drift
+* Nest stacks & Drift detection
+
+After perform drift detection, it could show:
+* DELTED
+* MODIFIED
+* NOT_CHECKED
+* IN_SYNC
+
+#### Rollbacks
+
+When create, update or destroy a stack, could encounter error.
+
+#### Pseudo Parameters
+
+parameters that are predefined by AWS cloudformation.
+
+* AWS::Partition
+* AWS::Region
+* AWS::StackId
+* AWS::StackName
+* AWS::URLSuffix
+
+#### Resource Attributes
+
+* Creation Policy
+* Deletion Policy
+* Update Policy
+* UpdateDelatePolicy
+* Depends On
+
+#### Instrinsic Functions
+
+Use instinsic functions in your templates to assign values to properties that are
+not available util runtime.
+
+##### Ref
+
+Ref returns different things for different resources
+
+##### GetAttr
+
+Allows to access many different variables on a resouce
+
+#### Wait Conditions
+
+Wait for a condition
+
+* To coordinate stack resouce creation with configuration actions that are external to the stack creation
+* To track the status of a configuration process
+
+WaitCondition is very similar to CreationPolicy. AWS recommends to using CreationPolicy for EC2 and ASG.
+
+* CreationPolicy waits on the dependent resouce
+* WaitCondition waits on the wait condition (external).
+
+### CDK
+
+Write IaC using an imperative paradigm with favourite language.
+
+What is transpiler?
+
+Imperative infrastructure -> Declarative Infrastructure
+
+### SAM
+
+An extension of CloudFormation that let's you define serverless applications.
+
+SAM is both an AWS CLI tool and a CloudFormation Macro which makes it effortless to define and deploy serverless applications.
+
+CloudFormation allows to specify macros through the `Transform` attribute.
+
+```json
+Transform: 'AWS::Serverless-2016-10-31'
+```
+
+SAM gives new Resource types:
+
+* `AWS::Serverless::Function`
+* `AWS::Serverless::API`
+* `AWS::Serverless::SimpleTable`
+
+#### SAM vs CloudFormation
+
+* Write at least 50% less code with SAM
+
+#### SAM CLI
+
+* `sam build`
+* `sam deploy`
+* `sam init`
+* `sam local generate-event`
+* `sam local invoke`
+* `sam local start-api`
+* `sam local start-lambda`
+* `sam logs`
+* `sam package`
+* `sam publish`
+* `sam validate`
+
+
+### CI/CD
+
+Code -> Build -> Integrate -> Test -> Release -> Deploy
+
+* Continous Integration: from Code to Test
+* Continous Delivery: from Code to Release
+* Continous Deployment: from Code to Deploy 
+
+#### CodeCommit
+
+Key features:
+
+* In scope with many compliance programs, eg. HIPPA
+* Repositories are encrypted
+* Can handle repo with large numbers of files or branches
+* No limit on the size of repos or file types
+* Close to your other prod resources
+* Use IAM to control AWS user access to repos.
+
+#### Docker
+
+#### CodeBuild
+
+A fully managed build servie in the cloud.
+* Run unit tests
+* Produce artifacts
+
+##### Workflow
+
+CodeBuild can be triggered by:
+* AWS Console
+* AWS CLI
+* AWS SDK
+* AWS CodePipline
+
+Then, -> CodeBuild -> BuildEnvironment -> Build Artifact/SNS Topic
+
+##### Build Environments
+
+Different build environemtns
+
+##### Buildspec.yml
+
+It provides the build instructions, needs to be at the root of your project.
+
+spec 0.1 - runs each build command in a separate instance
+spec 0.2 - run all build commands in the same instance, recommended.
+
+phases:
+* install
+* pre_build
+* build
+* post_build
+
+artifacts, the build ouput
+
+
+#### CodeDeploy
+
+A fully-managed deploy pipeline to deploy to staging or prodution environments.
+
+Can deploy:
+* EC2
+* On-Premise
+* Lambda
+* ECS
+
+##### Core Components
+
+1. Application
+2. Deployment Groups
+3. Deployment
+4. Deployment Configuration
+5. AppSpec File
+6. Revision
+
+##### In-Place Deployment
+
+* The app on each instance in the deployment is stopped
+* The latest app revision is installed, and the new version of app is started and validated.
+* You can use load balancer so that each instance is deregistered during its deployment, the restored to service after the deployment is complete.
+* Only deployments that use the EC2/On-Premises compute platform can use in-place deployment.
+
+##### Blue/Green Deployments
+
+* Instances are provisioned for the replacement environment
+* The latest app revision is installed on the replacement instances.
+* An optional wait time occurs for actitivies such as app testing and system verification.
+* Instances in the replacement environment are registered with an ELB, causing traffic to be rerouted to them.
+* Instances in the original environment are deregistered and can be terminated or kept running for other users.
+
+##### Appspec.yml
+
+##### Lifecycle Event Hooks
+
+##### CodeDeploy Agent and Service Role
+
+#### CodePipeline
+
+A fully-managed CI/CD pipeline to setup automatic deployments.
+
+Source -> Build -> Deploy
+
+* Pipeline
+* Stage
+* Action Group
+* Action
+* Artifact
+* Stage Trasitions
+
+#### CodeStar
+
+Quickly develop, build and deploy apps on AWS.
+
+* Deployment pipeline
+* Access management
+* Project dashboard to monitor infrastructure
+
+### RDS
+
+A managed relational database service. support multiple SQL engines, easy to scale, backup and secure.
+
+6 relational database:
+1. Amazon Aurora
+2. MySQL
+3. MariaDB
+4. PostgreSQL
+5. Oracle
+6. Microsoft SQL Server
+
+#### RDS Encryption
+
+You can turn on encryption at-rest for all RDS engines.
+
+You may not be able to turn encryption on for older engines.
+
+#### Backup
+
+1. Automated Backups
+
+  * Choose a Retention period between 1-35 days
+  * Stores transaction logs throughout the day
+  * Automated backups are enabled by default
+  * All data is stored inside S3
+  * There is no additional charge for backup storage
+  * You defined your backup window
+  * Storage I/O maybe suspended during backup
+
+2. Manual Snapshots
+  * Taken manually by the user
+  * Backup persist even if you delete the original RDS instance.
+
+#### Restoring Backups
+
+When recovering AWS will take the most recent daily backup, and apply transaction log data relevant to that day. This allows point-in-time recovery down to a second inside the retention period.
+
+* Backup data is never restored overtop of an existing instance.
+* A new instance is created for the restored database.
+* Restored RDS instance will have a new DNS endpoint.
+
+
+#### Multi AZ
+
+Ensure database remains available if another AZ becomes unavailable.
+
+Summary:
+* Synchronous replication - highly durable
+* Only database engine on primary instance is active
+* Automated backups are taken from standby
+* Always span 2 AZ within a single region.
+* Database engine version upgrades happen on primary
+* Automatic failover to standby when a problem is detected.
+
+#### Read Replicas
+
+Read-Replicas allow you to run multiple copies of your database, these copies only allows reads and is intended to alleviate the workload of your primary database to improve performance.
+
+* You must have automatic backups enabled to use Read Replicas
+* Asynchronous replication happens between the primary RDS instance and the replicas.
+* You can have up to 5 replicas of a database.
+* Each read replica will have its own DNS endpoint.
+
+Replica Types:
+* Muti-AZ replicas
+* Cross-region replicas
+* Replicas of other read replicas
+
+Summary:
+* Asynchronous replication - highly scalable
+* All read replicas are accessible and can be used for read scaling
+* No backups configured by default
+* Can be within an AZ, cross-AZ, cross-region
+* Database engine version upgrade is independent from source instance.
+* Can be manually promoted to a standalone database instance.
+
+### S3
+
+Object-based storage service.
+
+What is Object Storage?
+
+Data storage architecture that manages data as objects, as opposed to other storage architectures:
+* file systems, manages data as files and file hierarchy.
+* block storage, manage data as blocks within sectors and tracks.
+
+S3 provides with unlimited storage, store data from 0 bytes to 5 TB in size of object.
+
+
+#### Storage Classes
+
+Consider:
+* Retrieval Time
+* Accessibility
+* Durability
+
+Classes:
+* Standard (default)
+* Intelligent Tiering
+* Standard Infreently Accessed
+* One Zone IA
+* Glacier
+* Glacier Deep Archive
+
+
+#### S3 Security
+
+* All new buckets are PRIVATE by default
+* Logging per request can be turned on a bucket
+* Access control - Bucket Policies and Access Control List (ACL)
+
+#### S3 Encryption
+
+* Encryption in transit
+* Server Side Encryption (SSE)
+
+#### Data Consistency
+
+* Read after write consistency
+* Eventual consistency
+
+#### Cross-region replications (CRR)
+
+When abled, any object that is uploaded will be automatically replicated to another regions.
+
+You must have versioning turned on both the source and destination buckets.
+
+Can happen across accounts.
+
+#### S3 versioning
+
+Version ID
+
+Could not turn off, once enabled.
+
+#### S3 Lifecycle Management
+
+Automate the process of moving objects to different classes.
+
+#### Transfer Acceleration
+
+#### Presigned URLs
+
+To provide temporary url to access private objects.
+
+#### MFA Delete
+
+Ensure users can not delete objects from a bucket unless the provide their MFA Code.
+
+* AWS CLI must be used to turn on MFA.
+* The bucket must have versioning turned on.
+
+
 ### CLI & SDK
 
 #### CLI
