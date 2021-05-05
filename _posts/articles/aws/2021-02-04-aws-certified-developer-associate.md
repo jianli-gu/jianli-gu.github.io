@@ -2099,6 +2099,172 @@ Ensure users can not delete objects from a bucket unless the provide their MFA C
 * The bucket must have versioning turned on.
 
 
+### ElastiCache
+
+Managed caching service which either runs redis or memcached.
+
+It is only accessible to resource operating with the same VPC to ensure low latency.
+
+* In-memory caching service
+* Memcached or redis
+* Memcached is simple key/value store, preferred for caching HTML fragments, arguably faster than Redis.
+* Redis has richer data types and operations. Great for loaderboard, geospatial data or keeping track of unread notifications.
+* A cache is a temp storage area, most frequently identical queries are stored in the cache.
+* Within same VPC to ensure low latencies.
+
+
+### Lambda
+
+Run code without provisioning or managing servers.
+
+* Cheap
+* Serverless
+* Scales automatically
+
+Commonly used to glue different services together so ther use cases are endless.
+
+#### Triggers
+
+CDK, many other AWS services, third-party services e.g. datadog
+
+#### Pricing
+
+First 1 million requests per month are free, ...
+
+#### Defaults and Limits
+
+* 1000 Lambda running concurrently
+* /tmp directory can contain up to 500mb
+* run in No VPC
+* Timeout maximum 15min
+* Memory 128MB to 3008MB at an increment of 64MB
+
+#### Cold Starts
+
+AWS has servers preconfigured for your runtime environment, when a Lambda is invoked these servers need to be turned on and your code needs to be copied over.
+
+During the time, there will be a delay when the function will initially run which is call a Cold Start.
+
+If the same lambda is invoked and the server is still running it will use that server again, so little delay on that, this what we call a Warm Server.
+
+#### Function Versions
+
+You can use versions to manage the deployment of your AWS lambda functions.
+
+When you reference a Lambda use its ARN, a lambda has two initial versions:
+
+* Qualified ARN, with the version suffix
+* unqualified ARN, without version suffix
+
+Can not create Alias with unqualified ARN.
+
+#### Alias
+
+Give specific version a friendlier name programatically
+
+#### Layers
+
+Pull in additional code and content in the form of layers.
+
+A layer is a zip archive that contain libraries, a custom runtime, or other dependencies.
+
+You can use libraries in your function without needing to include them in your deployment package.
+
+* up to 5 layers attached to a function
+* all layers can not exceed the unzipped deployment package size 250MB
+
+
+### API Gateway
+
+A solution for creating secure APIs in cloud at any scale.
+
+#### Key Features
+
+Handle up to hundreds of thousands of concurrent API calls.
+
+* track and control any usage of the API. Throttle requests
+* expose https endpoints to define a restful api
+* highly scalable and cost effective.
+* send each api endpoint to a different target.
+* maintain multiple versions of your api.
+
+#### Configurations
+
+* Resources, URL
+* Methods, GET, POST, etc
+* Stages, dev, prod, qa, staging
+* Invoke URL
+* Deploy API
+
+#### Caching
+
+Turn on API cache
+
+* Reduce the number of calls
+* Improves latency of the requests
+
+#### CORS
+
+Cross-origin resource sharing (CORS) is a way that the server at the other end can relax a same-origin policy.
+
+CORS is always enforced by the client.
+
+
+#### Same origin policy
+
+it's used to help prevent Cross-site Scripting (XSS) attacks.
+
+Ignore postman and curl.
+
+### Step Functions
+
+Coordinate multiple services into serverless workflows.
+
+Two types of state machine:
+
+* Standard, general purpose, long workloads
+* Express, for streaming data, short workloads.
+
+#### States
+
+1. Pass state:
+
+Pass its input to its output, without performing work (dummy/mock)
+
+
+2. Task State
+
+represents a single unit of work performed by a state machine.
+
+* Lambda
+* Activity
+* Supported AWS services
+
+3. Choice State
+
+Add branching logic to a state machine
+
+4. Wait State
+
+Delays the state machine from continuing for a specific time.
+
+5. Succeed State
+
+Stops an execution successfully.
+
+6. Fail State
+
+Stop the execution and marks it as a failure.
+
+7. Parallel States
+
+Create parallel branches, does not move until both states complete
+
+8. Map State
+
+Iterate a process
+
+
 ### CLI & SDK
 
 #### CLI
