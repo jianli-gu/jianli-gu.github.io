@@ -15,7 +15,8 @@ This posts is about notes that I took during exam preparation.
 {: toc}
 
 
-## Deployment
+## AWS Services
+
 
 ### Elastic Beanstalk
 
@@ -222,8 +223,6 @@ Notes,
 
 ?
 
-
-## Development with AWS Services
 
 ### ECR
 
@@ -2296,15 +2295,59 @@ Supported languages
 * multiple profiles
 
 
-## Security
+## AWS Exam
 
 
+### Deployment
 
-## Refactoring
+* AWS CloudFormation
+* AWS Route53
+* AWS CodeDeploy
+* CloudFront
+* OpsWork
+* Elastic Beanstalk
+* AWS CodePipeline
+* AWS CodeBuild
+* AWS CodeCommit
+* Jenkins/CI/CD
 
 
+### Security
 
-## Monitoring & Troubleshooting
+* AWS Secrets Manager
+* AWS KMS
+* AWS Cognito
+* AWS IAM
+* CORS
+
+### Development with AWS Services
+
+* RDS
+* AWS CLIs
+* AWS SDKs
+* SQS
+* SNS
+* EC2
+* S3
+* API Gateway
+* ElatiCache
+* Lambda & Serverless
+* Kinesis
+* ECS
+* DynamoDB
+
+
+### Refactoring
+
+* Step functions
+* AWS Data Pipeline
+* AWS Redshift
+
+
+### Monitoring & Troubleshooting
+
+* CloudWatch
+* AWS X-ray
 
 
 
